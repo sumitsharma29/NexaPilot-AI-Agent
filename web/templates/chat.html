@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>NexaPilot</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Favicon + Logo (only one file: logo2.png) -->
+  <link rel="icon" type="image/png" href="/static/logo2.png">
+  <link rel="apple-touch-icon" href="/static/logo2.png">
+
+  <link rel="stylesheet" href="/static/chat.css" />
+</head>
+
+<body class="theme-dark" data-theme="dark">
+  <div class="topbar">
+
+    <!-- Mobile menu toggle -->
+    <div class="mobile-controls">
+      <button id="menu-toggle-btn" class="icon" aria-label="Toggle menu">☰</button>
+    </div>
+
+    <!-- Brand -->
+    <div class="brand">
+      <img src="/static/logo.png" class="brand-logo" alt="NexaPilot Logo" />
+      <div class="title-group">
+        <div class="logo-text">NexaPilot</div>
+        <div class="subtitle">Personal Productivity Co-Pilot</div>
+      </div>
+    </div>
+
+    <!-- Top-right controls -->
+    <div class="top-controls">
+      <div id="suggestions" class="suggestions"></div>
+      <button id="theme-toggle" aria-label="Toggle theme">🌗</button>
+      <button id="task-toggle-btn" class="icon" aria-label="Toggle tasks">✓</button>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="card brand-card">
+        <div class="logo-compact">NexaPilot</div>
+        <div class="tagline">Make every day productive</div>
+      </div>
+
+      <div class="card actions-card">
+        <h4>Quick Actions</h4>
+        <div class="action-row">
+          <button class="action" onclick="quickAdd()">➕ Add Task</button>
+          <button class="action" onclick="planDay()">📅 Plan</button>
+          <button class="action" onclick="clearChat()">🧹 Clear</button>
+        </div>
+      </div>
+
+      <div id="weather-card" class="card weather-card">
+        <h4>Weather</h4>
+        <div class="weather-body">Loading...</div>
+      </div>
+
+      <div class="card small-card">
+        <h4>Today</h4>
+        <div id="mini-calendar">—</div>
+      </div>
+    </aside>
+
+    <!-- Main Chat -->
+    <main class="main">
+      <div id="chat-area" class="chat-area" role="log" aria-live="polite">
+        <div class="skeleton" id="skeleton">
+          <div class="s-line sh"></div>
+          <div class="s-line short sh"></div>
+          <div class="s-line sh"></div>
+        </div>
+      </div>
+
+      <div id="typing" class="typing hidden" aria-hidden="true">
+        <div class="typing-avatar"></div>
+        <div class="typing-dots"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="composer">
+        <button id="mic-btn" class="mic" aria-label="Voice input">🎤</button>
+        <input id="user-input" class="input" autocomplete="off"
+               placeholder="Ask NexaPilot — plan my day, add task, check weather..." />
+        <button id="send-btn" class="send" aria-label="Send">Send</button>
+      </div>
+    </main>
+
+    <!-- Tasks Panel -->
+    <aside class="panel">
+      <div class="panel-header">
+        <h3>Tasks</h3>
+        <div class="panel-actions">
+          <button class="icon" onclick="refreshTasks()">↻</button>
+        </div>
+      </div>
+
+      <div id="task-list" class="task-list">Loading tasks…</div>
+
+      <div class="panel-footer">
+        <input id="new-task" placeholder="New task title..." />
+        <button class="add-btn" onclick="addTaskFromInput()">Add</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="fab">
+    <button onclick="quickAdd()" title="Quick add">＋</button>
+  </div>
+
+  <script src="/static/chat.js"></script>
+</body>
+</html>
