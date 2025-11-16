@@ -1,10 +1,3 @@
-/* ==========================================================
-   NexaPilot UI v5 — chat.js (Final)
-   - Theme persistence
-   - Mic support (SpeechRecognition)
-   - Mobile toggles
-   - Chat, Tasks & Weather integration
-   ========================================================== */
 
 (() => {
   // Elements
