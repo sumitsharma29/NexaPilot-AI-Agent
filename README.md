@@ -2,9 +2,8 @@
 *A Multi-Agent Intelligent Assistant for Daily Productivity*
 
 <p align="center">
-  <img src="web/static/logo.png" width="120" alt="NexaPilot Logo"/>
+  <img src="web/static/banner.png" width="100%" alt="NexaPilot Banner"/>
 </p>
-
 ---
 
 ## ✨ Overview
